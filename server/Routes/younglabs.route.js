@@ -1,4 +1,4 @@
-//younglabs.controller.js
+//importing controllers and creating APIs
 import express from 'express';
 import { greetUser, getgreeting } from '../Controllers/younglabs.controller.js';
 

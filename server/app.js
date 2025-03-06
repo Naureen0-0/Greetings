@@ -1,4 +1,4 @@
-//app.js
+//creating main APIs and connecting mongodb and port 
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -23,7 +23,6 @@ app.use(cors({
 app.use(express.json());
 
 //Routes
-// app.use('/api/newuser', newuserRouter);
 app.use('/api', router);
 
 app.get('/', (req, res) => {

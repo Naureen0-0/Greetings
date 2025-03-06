@@ -4,7 +4,7 @@ const errorMessage = document.querySelector(".error-message");
 const greetingMessage = document.querySelector(".greeting-message");
 
 button.addEventListener("click", async (event) => {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     const name = inputField.value.trim();
 
@@ -16,10 +16,11 @@ button.addEventListener("click", async (event) => {
         errorMessage.textContent = "Name is required";
         inputField.classList.add("input-err");
 
+        // Clear error message after 1 seconds
         setTimeout(() => {
             inputField.classList.remove("input-err");
-            errorMessage.textContent = ""; // Clear error message after 5 seconds
-        }, 1000); // 5000 milliseconds = 5 seconds
+            errorMessage.textContent = ""; 
+        }, 1000); 
         return;
     }
 
@@ -36,25 +37,31 @@ button.addEventListener("click", async (event) => {
             const errorData = await response.json();
             errorMessage.textContent = errorData.message || "Failed to get greeting. Please try again.";
 
+            // Clear error message after 3 seconds
             setTimeout(() => {
-                errorMessage.textContent = ""; // Clear error message after 5 seconds
+                errorMessage.textContent = ""; 
             }, 3000);
             return;
         }
 
+        // Display greeting message
         const data = await response.json();
-        greetingMessage.textContent = data.message; // Display greeting message
+        greetingMessage.textContent = data.message; 
 
+        //clear greeting message after some sec
         setTimeout(() => {
-            greetingMessage.textContent = ""; // Clear greeting message after 5 seconds
+            greetingMessage.textContent = ""; 
         }, 3000);
     } catch (error) {
         errorMessage.textContent = 'Failed to get greeting. Please try again.';
 
+        //clear error message after some sec
         setTimeout(() => {
-            errorMessage.textContent = ""; // Clear error message after 5 seconds
+            errorMessage.textContent = ""; 
         }, 1000);
-    } finally{
-        inputField.value = ""; //clear the name input field
+    }
+    //clear the name input field 
+    finally{
+        inputField.value = ""; 
     }
 });

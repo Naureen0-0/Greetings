@@ -1,4 +1,4 @@
-//younglabs.controller.js
+//import schema from model and write Logics for Greetings
 import Greeting from "../Models/younglabs.model.js";
 
 const greetUser = async(req, res)=> {
