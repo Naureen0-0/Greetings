@@ -11,7 +11,7 @@ Welcome to the **YoungLabs Greetings** project! This is a simple web application
 ### Frontend
 - **HTML**: Structure of the web page.
 - **CSS**: Styling and layout.
-- ****JavaScript**: Dynamic behavior and interaction.
+- **JavaScript**: Dynamic behavior and interaction.
 
 ### Backend
 - **Node.js**: Runtime environment.
